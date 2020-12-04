@@ -21,10 +21,14 @@ If you are interested in trying out Lacework click [here](https://lacework.zoom.
 The following steps will walk you through setting up AWS CodeBuild to build an AMI in `us-east-1`
 
 ### Fork The Example Repo
-Make sure you are signed into your GitHub account then **Fork** this repository to your own GitHub Org
+<img src="https://techally-artifacts.s3-us-west-2.amazonaws.com/up-and-running/aws-code-build/fork_repo.png">
+
+We have prepared all of the code you will need for this walkthrough. First thing you will need to do is to [log in to GitHub](https://github.com/login), then **Fork** this repository to your own GitHub account.
 
 ### Setup AWS CodeBuild
-1. Login to the AWS Console and navigate to AWS CodeBuild, or click the following link to go there directly...
+Next up we need to setup Code Build. You will need your credentials to AWS, and the link the to repository you cloned in the previous steps. The following sections will use the`us-east-1` region of AWS, but should work in any region.
+
+1. [Log in](https://aws.amazon.com/console/) to the AWS Console and navigate to AWS CodeBuild, or click the following link to go there directly by clicking on the following link:
 
    https://console.aws.amazon.com/codesuite/codebuild/projects?region=us-east-1
 
@@ -36,7 +40,7 @@ Make sure you are signed into your GitHub account then **Fork** this repository 
 
 5. For the **Environment** section use the default selection of **Managed Image** and choose "Amazon Linux 2" for the operating system. For **Runtime(s)** choose "Standard", and for **Image** choose "aws/codebuild/amazonlinux2-x86_64-standard:3.0". The **Role Name** should default to "codebuild-AMI_Builder-service-role". Expand the **Additional configuration** section and scroll down to **Environment variables** and add a "Plaintext" variable of "AWS_REGION" with a value of "us-east-1"
 
-<img src="https://techally-artifacts.s3-us-west-2.amazonaws.com/up-and-running/environment.gif">
+<img src="https://techally-artifacts.s3-us-west-2.amazonaws.com/up-and-running/aws-code-build/environment.gif">
 
 6. For the remaining sections leave everything default for now and then click **Create Build Project**
 
@@ -373,5 +377,5 @@ amazon-ebs: ‘lacework-cli-linux-amd64/lacework’ -> ‘/usr/local/bin/lacewor
 ==> amazon-ebs: Waiting for the instance to stop...
 ```
 
-Great new.s..NO VULNERABILITIES! Time for Tacos!!!
+Great news...NO VULNERABILITIES! Time for Tacos!!!
 
